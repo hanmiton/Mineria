@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo Mineria</title> 
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+
+    <style>*{margin:0;border:0}body{background:url(img/fondo-1.jpg) no-repeat #000;background-size:cover}.padreform{display:flex;flex-direction:column;width:100%;height:100vh;background: rgba(0,0,0,0.5)}.padreform-encabezado,.padreform-saludo{justify-content:center;width:100%;display:flex}.padreform-encabezado{height:30vh;opacity:1}.padreform-saludo{background:#000;opacity:.75;height:20vh}.imagen,.padre-encabezado-titulo,.padreform-encabezado-titulo,.padreform-robot-img{background-repeat:no-repeat}.padreform-encabezado-titulo{background-image:url(img/titulo.png);    background-position: center;width:40%;height:35vh;background-size:90%;opacity:1}.padreform-robot{display:flex;justify-content:center;width:100%;height:50vh}.padreform-saludoimg{display:flex;flex-direction:row;justify-content:center;width:100%;height:60vh}.padreform-saludotxt{display:flex;justify-content:center;flex-direction:column;width:55%;height:60vh}.padreform-robot-img{background-image:url(img/robot.png);background-position: center;width:60%;height:50vh;background-size:90%}.padreform-llenar{width:100%;height:20vh;display:flex;justify-content:center}.padreform-nombre{width:25%;height:15vh;display:flex;flex-direction:column;justify-content:space-between}.padreform-nombre-campo{display:flex;justify-content:space-around;width:100%;height:8vh}.padreform-nombre-campo-logo1{width:15%;height:8vh;background-repeat:no-repeat;background-size:100%;border-radius: 2px}#EElogo1{background-image:url(img/eelogo1.png)}#EElogo2{background-image:url(img/eelogo2.png);background-size:100%;width: 25%}.padreform-nombre-boton{width:100%;height:5vh;border-radius:6px}.padreform-nombre-boton2{width:25%;height:5vh;border-radius:6px}.menu,.padre{width:100%;display:none}.padre{flex-direction:column;height:85vh}.menu{height:15vh}.padre-encabezado{display:flex;justify-content:center}.padre-encabezado-titulo{background-image:url(img/titulo.png);width:25%;height:20vh;background-size:90%}.padre-body{display:flex;flex-direction:row;width:100%;height:65vh}#animacion1{width:50%;height:65vh}.padre-body-contenedor1{display:flex;flex-direction:column;justify-content:center;width:100%;height:65vh}.padre-body-contenedor1-minerales1{display:flex;width:100%;justify-content:center;height:32vh}.padre-body-contenedor1-minerales1-img{width:40%;height:32vh}.padre-body-contenedor2,.padre-body-contenedor2-imagenes{display:flex;justify-content:center;width:50%;height:65vh}.imagen{background-size:70%}#img5,#img6{background-size:80%;background-repeat:no-repeat}
+
+    #img1{background-image:url(img/img101.png)}#img2{background-image:url(img/img102.png)}#img3{background-image:url(img/img103.png)}#img4{background-image:url(img/img104.png)}#img1:hover{background-image:url(img/img7.png)}#img2:hover{background-image:url(img/img8.png)}#img3:hover{background-image:url(img/img9.png)}#img4:hover{background-image:url(img/img10.png)}#img1:active{background-image:url(img/img11.png)}#img2:active{background-image:url(img/img12.png)}#img3:active{background-image:url(img/img14.png)}#img4:active{background-image:url(img/img13.png)}#img5{background-image:url(img/img5.png)}#img6{background-image:url(img/img6.png)}.padre-body-contenedor2-imagenes{flex-direction:column}.padre-body-contenedor2-imagenes-img{width:100%;height:30vh}.padre-contenedor-menu{display:none;display:flex;justify-content:center;width:100%;height:15vh}#menu{display:none}.padre-contenedor-menuprueba{display:flex;flex-direction:row;justify-content:center;width:100%;height:15vh}.padre-menuEscenas{display:flex;justify-content:space-between;width:80%;height:15vh}.padre-menuEscenas-Escena{width:8%;height:13vh;background-repeat:no-repeat;background-size:100%;border-radius:50%}.padre-menuEscenas-Escena1,.padre-menuEscenas-Escena2,.padre-menuEscenas-Escena3,.padre-menuEscenas-Escena4,.padre-menuEscenas-Escena5,.padre-menuEscenas-Escena6,.padre-menuEscenas-Escena7{}.padre2{display:none;flex-direction:column;width:100%;height:85vh}.padre2-espacio1{width:100%;height:5vh}.padre2-contenedor1{display:flex;justify-content:flex-end;width:90%;height:40vh}.padre2-contenedor1-mina{width:30%;height:50vh;background-repeat:no-repeat;background-size:100%;background-image:url(img/img15.png)}#animacion3,.padre2-body{width:100%;height:75vh}.padre2-contenedor1-mina:hover{background-image:url(img/img16.png)}#animacion2{width:100%;height:50vh}.padre2-body{display:flex;justify-content:space-around}.padre2-body-mina2{display:flex;flex-direction:column;justify-content:center;width:60%;height:75vh;background-repeat:no-repeat;background-size:60%;background-image:url(img/img17.png)}.padre2-body-mina2-hombre,.padre2-body-mina2-msg{width:80%;background-position:center;background-repeat:no-repeat}.padre2-body-mina2-msg{height:30vh;background-size:40%;background-image:url(img/img19.png)}.padre2-body-mina2-hombre{height:45vh;background-size:25%;background-image:url(img/img18.png)}.padre3{display:none;flex-direction:column;width:100%;height:85vh}.padre3-hijo1{display:flex;justify-content:center;width:100%;height:100vh}.padre3-hijo1-contenedor{width:100%;height:85vh;display:flex;flex-direction:column;justify-content:flex-end}.padre3-hijo1-contmsgs{width:100%;height:30vh;display:flex;justify-content:space-around}.padre3-hijo1-contmsg{width:20%;height:30vh;background-repeat:no-repeat;background-size:100%;background-position:bottom}.padre3-hijo1-contimg,.padre4-hijo1-gota-img,.padre4-hijo1-gota-msg{background-size:80%;background-position:bottom;background-repeat:no-repeat}.padre3-hijo1-contimgs{width:100%;height:50vh;display:flex;justify-content:center}.padre3-hijo1-contimg{width:20%;height:50vh}#img20{background-image:url(img/img20.png)}#img21{background-image:url(img/img21.png)}#img22{background-image:url(img/img22.png)}#img23{background-image:url(img/img23.png)}#img24{background-image:url(img/img24.png)}#img25{background-image:url(img/img25.png)}#img26{background-image:url(img/img26.png)}#img27{background-image:url(img/img18.png)}.oculto{visibility:hidden;opacity:0}.letra-grande{font-size:80px}.bienvenida-saludo{width:100%;height:30 hv}.padre4{display:none;flex-direction:column;justify-content:center;width:100%;height:85vh}.padre4-contenedor{display:flex;flex-direction:column;justify-content:center;width:100%;height:85vh}.padre4-hijo1,.padre4-hijo1-gota{justify-content:center;display:flex}.padre4-hijo1{width:100%;height:35vh}.padre4-hijo1-gota{width:70%;height:45vh}.padre4-hijo1-gota-img{width:35%;height:45 h}.padre4-hijo1-gota-msg{width:30%;height:45vh}
+    .padre4-hijo2{display:flex;justify-content:center;width:100%;height:40vh}.padre4-hijo2-h1{width:16.6%;height:40vh;background-repeat:no-repeat;background-size:90%;background-position:bottom}#img30{background-image:url(img/img30.png)}#img31{background-image:url(img/img31.png)}#img32{background-image:url(img/img32.png)}#img33{background-image:url(img/img33.png)}#img34{background-image:url(img/img34.png)}#img35{background-image:url(img/img35.png)}#img36{background-image:url(img/img36.png)}#img37{background-image:url(img/img37.png)}#img32:hover{background-image:url(img/img38.png)}#img33:hover{background-image:url(img/img39.png)}#img34:hover{background-image:url(img/img40.png)}#img35:hover{background-image:url(img/img41.png)}#img36:hover{background-image:url(img/img42.png)}#img37:hover{background-image:url(img/img43.png)}.padre5{flex-direction:column;width:100%;height:85vh}.padre5-espacio{width:100%;height:25vh}.padre5-body{display:flex;justify-content:center;width:100%;height:60vh}.contenedor1{width:50%;height:60vh}.padre5-body-contenedor1{width:100%;height:60vh;display:flex;flex-direction:column;justify-content:center}.padre5-body-contenedor1-elementos1{width:100%;height:30vh;display:flex}.padre5-body-contenedor1-elementos1-elemento{width:33.33%;height:30vh;background-size:70%;background-repeat:no-repeat}.padre5-body-contenedor2{width:40%;height:60vh}.padre5-body-contenedor2-cientificos{display:flex;flex-direction:column;justify-content:flex-end;width:100%;height:60vh;background:url(img/Escena5/cientificos2.png) center no-repeat}.padre5-body-contenedor2-instrumentos{width:100%;height:40vh;background:url(img/Escena5/cientificos1.png) center no-repeat}.padre5-body-contenedor2-pizarra{width:100%;height:60vh;background:url(img/Escena5/pizarra.png) center no-repeat}#imagen1{background-size:60%;background-image:url(img/Escena5/a.png)}#imagen2{background-image:url(img/Escena5/b.png)}#imagen3{background-size:50%;background-image:url(img/Escena5/c.png)}#imagen4{background-image:url(img/Escena5/d.png)}#imagen5{background-image:url(img/Escena5/e.png)}#imagen6{background-image:url(img/Escena5/f.png)}.padre6{display:none;flex-direction:column;width:100%;height:85vh}.zoom{transition:1s}.zoom:hover{transform:scale(1.2)}.latido{animation:1s latido infinite}@-moz-keyframes latido{0%,90%{transform:scale(1)}50%{transform:scale(1.1)}}@-webkit-keyframes latido{0%,90%{transform:scale(1)}50%{transform:scale(1.1)}}@-o-keyframes latido{0%,90%{transform:scale(1)}50%{transform:scale(1.1)}}@keyframes latido{0%,90%{transform:scale(1)}50%{transform:scale(1.1)}}</style>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+    <link rel="stylesheet" href="./main.css">   
+</head>
+<body>
+    <section id="formulario" class="padreform">
+        <div class="padreform-encabezado">
+            <div class="padreform-encabezado-titulo">
+            </div>
+        </div>
+        <div class="padreform-robot">
+            <div class="padreform-robot-img">
+            </div>
+        </div>
+        <div class="padreform-llenar">
+            <div class="padreform-nombre">
+                <div class="padreform-nombre-campo">
+                    <div id="EElogo1" class="padreform-nombre-campo-logo1">
+                    </div>
+                    <div id="EElogo2" class="padreform-nombre-campo-logo1">
+                    </div>
+                </div>
+                <button id="comenzar" class="padreform-nombre-boton">Comenzar</button>
+            </div>
+        </div>  
+    </section>
+    <!--seccion Escena 1-->
+    <section id="fondo" class="padre oculto">       
+        <div class="padre-encabezado">
+            <div class="padre-encabezado-titulo">
+            </div>
+        </div>    
+        <div class="padre-body">
+            <div hidden id="animacion1">
+                <div class="padre-body-contenedor1">
+                    <div class="padre-body-contenedor1-minerales1">
+                        <div id="img1" class="padre-body-contenedor1-minerales1-img imagen  latido">
+                        </div>
+                        <div id="img2" class="padre-body-contenedor1-minerales1-img imagen  latido">
+                        </div>
+                    </div>
+                    <div class="padre-body-contenedor1-minerales1">
+                        <div id="img3" class="padre-body-contenedor1-minerales1-img imagen  latido">
+                        </div>
+                        <div id="img4" class="padre-body-contenedor1-minerales1-img imagen  latido">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="padre-body-contenedor2">
+                <div class="padre-body-contenedor2-imagenes">
+                    <div id="img5" class="padre-body-contenedor2-imagenes-img imagen zoom oculto">
+                    </div>
+                    <div id="img6" class="padre-body-contenedor2-imagenes-img imagen latido">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!--seccion Escena 2-->
+    <section id="fondo2" class="padre2 oculto">   
+        <div class="padre2-espacio1">
+        </div>    
+        <div id="animacion2">
+            <div class="padre2-contenedor1">
+                <div id= "tex1" class="zoom">
+                </div>
+                <div id="img16"class="padre2-contenedor1-mina latido">
+                </div>
+            </div> 
+        </div>
+         <div id="animacion4">
+            <div class="padre2-contenedor1">
+                
+            </div> 
+        </div>
+        <div hidden id="animacion3">
+            <div class="padre2-body">
+                <div id="img17" class="padre2-body-mina2 ">
+                    <div id="img18"class="padre2-body-mina2-msg oculto zoom">
+                    </div>
+                    <div  hidden id="img19"class="padre2-body-mina2-hombre latido">
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+    </section>
+
+
+    <!--seccion de la tercera escena-->
+    <section id="fondo3" class="padre3 oculto">
+        <div class="padre3-hijo1">
+            <div class="padre3-hijo1-contenedor">
+                <div class="padre3-hijo1-contmsgs">
+                    <div  hidden id="img20" class="padre3-hijo1-contmsg zoom">
+                    </div>
+                    <div  hidden id="img21" class="padre3-hijo1-contmsg zoom">
+                    </div>
+                    <div  hidden id="img22" class="padre3-hijo1-contmsg zoom">
+                    </div>
+                    <div  hidden id="img23" class="padre3-hijo1-contmsg zoom">
+                    </div>          
+                </div>
+                <div class="padre3-hijo1-contimgs">
+                    <div  hidden id="img24" class="padre3-hijo1-contimg latido">
+                    </div>
+                    <div id="img25" class="padre3-hijo1-contimg latido">
+                    </div>
+                    <div  hidden id="img26" class="padre3-hijo1-contimg latido">
+                    </div>
+                    <div  hidden id="img27" class="padre3-hijo1-contimg latido">
+                    </div>  
+                </div>
+            </div>     
+        </div>
+    </section>
+
+
+    <!--seccion de la cuarta escena-->
+
+
+    <section id="fondo4" class="padre4 oculto">
+        <div class="padre4-contenedor">
+            <div class="padre4-hijo1">
+                <div class="padre4-hijo1-gota">
+                    <div id="img30" class="padre4-hijo1-gota-img latido">
+                    </div>
+                    <div id="img31" class="padre4-hijo1-gota-msg zoom">
+                    </div>
+                </div>
+            </div>
+            <div hidden id="unidades">
+                <div class="padre4-hijo2">
+                    <div id="img32" class="padre4-hijo2-h1"></div>
+                    <div id="img33" class="padre4-hijo2-h1"></div>
+                    <div id="img34" class="padre4-hijo2-h1"></div>
+                    <div id="img35" class="padre4-hijo2-h1"></div>
+                     <div id="img36" class="padre4-hijo2-h1"></div>
+                    <div id="img37" class="padre4-hijo2-h1"></div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!--seccion de la cuarta escena-->
+
+    <section id="fondo6" class="padre6 oculto">
+        <!--esto contendra la explicacion del codigo-->
+        <section id="formulario2" class="padreform">
+            <div class="padreform-robot">
+                <div class="txtTorre">
+                </div>
+                <div class="ruleta"> 
+                    <div class="ruleta-hor">
+                        <div id="ruleta-ver-der" class="ruleta-ver">   
+                        </div>
+                    </div>
+                     <div class="ruleta-hor">
+                        <div id="ruleta-ver-cen" class="ruleta-ver">   
+                        </div>
+                    </div>
+                    <div class="ruleta-hor">
+                        <div class="ruleta-ver">   
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="padreform-llenar">
+                <div class="padreform-nombre">
+                    <div class="padreform-nombre-campo">
+                        <div id="EElogo12" class="padreform-nombre-campo-logo1">
+                        </div>
+                        <div id="EElogo22" class="padreform-nombre-campo-logo1">
+                        </div>
+                    </div>
+                    <button id="comenzar2" class="padreform-nombre-boton">Comenzar</button>
+                </div>
+            </div>  
+        </section>
+    </section>
+
+    <div hidden id="formulario3">
+        <section class="padreform">
+        <div class="padreform-robot">
+            <div id="pregunta" class="padreform-robot-img">
+            </div>
+        </div>
+        <div class="padreform-llenar">
+            <div class="padreform-nombre">
+                <div class="padreform-nombre-campo">
+                    <div id="yes" class="padreform-nombre-campo-logo1">
+                    </div>
+                    <div id="no" class="padreform-nombre-campo-logo1">
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+    </div>
+     <div hidden id="formulario4">
+        <section class="padreform">
+            <div class="padreform-robot">
+                <div id="pregunta2" class="padreform-robot-img">
+                </div>
+
+            </div>
+             <div class="padreform-robot">
+                <div id="pregunta3" class="padreform-robot-img">
+                </div> 
+            </div>
+             <div class="padreform-robot">
+                <div id="inicio" class="padreform-robot-img">
+                </div> 
+            </div>
+            <div id="compartir">
+                <div class="centro-face">
+                    <div id="facebook" class="fb-share-button bt-front opacidad" data-href="https://apps.facebook.com/534119083428011/" data-layout="button_count">
+                  </div>
+                </div>  
+            </div>
+            <!--<div class="padreform-llenar">
+                <div class="padreform-nombre">
+                    <div class="padreform-nombre-campo">
+                        <div id="yes2" class="padreform-nombre-campo-logo1">
+                        </div>
+                        <div id="no2" class="padreform-nombre-campo-logo1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->  
+        </section>
+    </div>
+
+
+     <section id="fondo5">
+        <div class="padre5">
+            <div class="padre5-row1">
+                <div id= "i9" class="padre4-row1-caja imagen-juego"></div>
+                <div id= "i10" class="padre4-row1-caja imagen-juego"></div>
+                <div id= "i11" class="padre4-row1-caja imagen-juego"></div>
+                <div id= "i12" class="padre4-row1-caja imagen-juego"></div>
+                <div id= "i13" class="padre4-row1-caja imagen-juego"></div>
+                <div id= "i38" class="padre4-row1-caja imagen-juego">
+                     <form>
+                        <input id="tirar" type="button"  onClick="lanzar()">
+                    </form>
+                        <script>
+                        var num=0;
+                        var dado=0;
+                        var data = [
+                    {"label":"Pregunta 1",  "value":1 ,  "question":"./img/preguntas/1.png" , "res":true}, // SI
+                    {"label":"Pregunta 2",  "value":1,  "question":"./img/preguntas/2.png" , "res":true}, //SI
+                    {"label":"Pregunta 3",  "value":1,  "question":"./img/preguntas/3.png" , "res":true}, //si
+                    {"label":"Pregunta 4",  "value":1,  "question":"./img/preguntas/4.png" , "res":false}, //No
+                    {"label":"Pregunta 5",  "value":1,  "question":"./img/preguntas/5.png" , "res":true}, 
+                    {"label":"Pregunta 6",  "value":1,  "question":"./img/preguntas/6.png" , "res":true}, //Todos los ecuatorianos representatos a través del estado
+                    {"label":"Pregunta 7",  "value":1,  "question":"./img/preguntas/7.png" , "res":false}, //No
+                    {"label":"Pregunta 8",  "value":1,  "question":"./img/preguntas/8.png" , "res":true}, //Desaarrollo, rosperidad y bienestar
+                    {"label":"Pregunta 9",  "value":1,  "question":"./img/preguntas/9.png" , "res":true},//si 
+                    {"label":"Pregunta 10", "value":1, "question":"./img/preguntas/10.png" , "res":true},//si
+        ];
+
+                        var punt=0;
+                        function lanzar()
+                            {
+                                num;
+
+                                var randomdice=0;
+                                var randomdice=Math.round(Math.random()*5);
+                                document.images["mydice"].src=eval("face"+randomdice+".src");
+
+
+                                dado=dado+randomdice+1;
+                                $("#i"+dado).addClass("latido");
+                                $('#i'+dado).click(function(){
+                                    $("#i"+dado).removeClass("latido");
+                                    $("#fondo5").hide("slow"); 
+                                    $("#formulario3").show("slow"); 
+                                    $("#pregunta").css("background-image","url(./img/preguntas/"+num+".png)")  
+                            });
+                                num++;
+
+                                console.log(punt);
+                                if(dado>28){
+
+                                    $("#fondo5").hide("slow"); 
+                                    $("#formulario4").show("slow"); 
+                                    $("#pregunta3").css("background-image","url(./img/num/"+punt+".png)"); 
+                                    
+                                }
+
+
+                            }
+
+
+                                $('#yes').click(function(){
+                                    /*Ocultar escenas excepto la 2*/  
+                                    $("#formulario3").hide("slow");
+                                    $("#fondo6").show("slow"); 
+                                    $("#menu").show("slow");
+
+                                    if(data[num-1].res){
+                                        punt++;  
+                                    }
+                                    //punt++;
+                                          
+                                    
+
+                                });
+
+                                $('#no').click(function(){
+                                    /*Ocultar escenas excepto la 2*/  
+                                    $("#formulario3").hide("slow");
+                                    $("#fondo6").show("slow"); 
+                                    $("#menu").show("slow");  
+
+                                    if(!data[num-1].res){
+                                        punt++;
+                                    }
+
+                                    console.log(punt);
+                                    
+                                });
+
+                        </script>
+                </div>
+                <div id= "i39" class="padre4-row1-caja imagen-juego">
+                    <img id="i39-dado" src="" name="mydice">
+                </div>
+                <div id= "i40" class="padre4-row1-caja imagen-juego"></div>
+            </div>
+            <div class="padre5-row1">
+                <div id="i8" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i31" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i30" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i29" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i14" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i17" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i18" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i19" class="padre4-row1-caja imagen-juego"></div>
+            </div>
+            <div class="padre5-row1">
+                <div  id="i7" class="padre4-row1-caja imagen-juego"></div>
+                <div  id="i6" class="padre4-row1-caja imagen-juego"></div>
+                <div  id="i5" class="padre4-row1-caja imagen-juego"></div>
+                <div  id="i201" class="padre4-row1-caja imagen-juego"></div>
+                <div  id="i15" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i16"  class="padre4-row1-caja imagen-juego"></div>
+                <div  class="padre4-row1-caja imagen-juego"></div>
+                <div  id="i20" class="padre4-row1-caja imagen-juego"></div>
+            </div>
+            <div class="padre5-row1">
+                <div id="i161" class="padre4-row1-caja imagen-juego" ></div>
+                <div id="i" class="padre4-row1-caja imagen-juego" ></div>
+                <div id="i4" class="padre4-row1-caja imagen-juego" ></div>
+                <div id="i131"  class="padre4-row1-caja imagen-juego" ></div>
+                <div id="i24" class="padre4-row1-caja imagen-juego" ></div>
+                <div id="i23" class="padre4-row1-caja imagen-juego" ></div>
+                <div id="i22" class="padre4-row1-caja imagen-juego" ></div>
+                <div id="i21" class="padre4-row1-caja imagen-juego" ></div>
+            </div>
+            <div class="padre5-row1">
+                <div id="i1" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i2" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i3" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i41" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i25" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i26" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i27" class="padre4-row1-caja imagen-juego"></div>
+                <div id="i28" class="padre4-row1-caja imagen-juego"></div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="menu" class="padre-contenedor-menuprueba">
+         <div class="padremenu">
+                <div class="padre-menuEscenas">
+                    <div id="FlechaAtras" class="padre-menuEscenas-Escena padre-menuEscenas-Escena1 ">
+                     </div>   
+                    <div id="Escena1" class="padre-menuEscenas-Escena padre-menuEscenas-Escena1">
+                    </div>
+                    <div id="Escena2" class="padre-menuEscenas-Escena padre-menuEscenas-Escena2">
+                    </div>
+                    <div id="Escena3" class="padre-menuEscenas-Escena padre-menuEscenas-Escena3">
+                    </div>
+                    <div id="Escena4" class="padre-menuEscenas-Escena padre-menuEscenas-Escena4">
+                    </div>
+                    <div id="Escena5" class="padre-menuEscenas-Escena padre-menuEscenas-Escena5">
+                    </div>  
+                   
+                    <div id="FlechaAdelante" class="padre-menuEscenas-Escena padre-menuEscenas-Escena1">
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+
+<script type="text/javascript">
+
+    
+    /* Movimiento fondo*/
+    var numEscena= 1;
+    window.onload = function() {
+      document.onmousemove = function(e) {
+        var x = -(e.clientX/40);
+        var y = -(e.clientY/40);
+        this.body.style.backgroundPosition = x + 'px ' + y + 'px';
+      };
+    };
+    
+  </script>
+
+    <script>!function o(i,n,e){function s(c,l){if(!n[c]){if(!i[c]){var $="function"==typeof require&&require;if(!l&&$)return $(c,!0);if(d)return d(c,!0);var t=new Error("Cannot find module '"+c+"'");throw t.code="MODULE_NOT_FOUND",t}var f=n[c]={exports:{}};i[c][0].call(f.exports,function(o){var n=i[c][1][o];return s(n?n:o)},f,f.exports,o,i,n,e)}return n[c].exports}for(var d="function"==typeof require&&require,c=0;c<e.length;c++)s(e[c]);return s}({1:[function(o,i,n){$(document).ready(function(){$("#comenzar").click(function(){$("#formulario").hide("slow"),$("#fondo").css("visibility","visible"),$("#fondo").fadeTo(1e3,1),$("#menu").css("visibility","visible"),$("#menu").fadeTo(1e3,1)})}),$(document).ready(function(){$("#img6").click(function(){$("#img6").removeClass("latido"),$("#img5").removeClass("oculto"),$("#animacion1").show("slow")})}),$(document).ready(function(){$("#img16").click(function(){$("#img16").removeClass("latido"),$("#animacion2").hide("slow"),$("#animacion4").hide("slow"),$("#animacion3").show("slow"),$("#img19").show("slow")})}),$(document).ready(function(){$("#img17").click(function(){$("#img17").removeClass("latido"),$("#img19").show("slow")})}),$(document).ready(function(){$("#img19").click(function(){$("#img19").removeClass("latido"),$("#img18").css("visibility","visible"),$("#img18").fadeTo(300,1)})}),$(document).ready(function(){$("#img17").click(function(){$("#img17").removeClass("latido"),$("#img19").show("slow")})}),$(document).ready(function(){$("#img19").click(function(){
+
+        $("#FlechaAdelante").addClass("latido"),
+        $("#img19").removeClass("latido"),$("#img18").css("visibility","visible"),$("#img18").fadeTo(300,1)})}),$(document).ready(function(){$("#img25").click(function(){
+
+                $("#img21").css("visibility","visible"),
+                $("#img21").show("slow"),
+
+
+        $("#img25").removeClass("latido"),$("#img21").removeClass("latido"),$("#img26").show("slow"),$("#img21").show("slow"),$("#img22").css("visibility","hidden"),$("#img22").show("slow")
+
+    })}),
+
+        $(document).ready(function(){$("#img26").click(function(){
+            $("#img22").css("visibility","visible"),
+
+             $("#img20").css("visibility","hidden"),
+                $("#img20").show("slow"),
+
+            $("#img26").removeClass("latido"),$("#img22").removeClass("latido"),
+        $("#img24").show("slow"),$("#img22").show("slow")})}),$(document).ready(function(){$("#img24").click(function(){
+
+            $("#img20").css("visibility","visible"),
+            $("#img23").css("visibility","hidden"),
+            $("#img23").show("slow"),
+
+            $("#img24").removeClass("latido"),$("#img20").removeClass("latido"),$("#img27").show("slow"),$("#img20").show("slow")})}),$(document).ready(function(){$("#img27").click(function(){
+                $("#FlechaAdelante").addClass("latido");
+                $("#img23").css("visibility","visible"),
+                $("#img23").removeClass("latido"),$("#img27").removeClass("latido"),$("#img23").show("slow")})}),$(document).ready(function(){$("#img30").click(function(){
+                     $("#FlechaAdelante").addClass("latido"),
+
+                    $("#img30").removeClass("latido"),$("#unidades").show("slow")})}),
+
+
+                $(document).ready(function(){$("#Escena1, #inicio").click(function(){
+
+
+                    $("#formulario4").hide("slow"), 
+                    $("#FlechaAdelante").removeClass("latido"),
+        $("#FlechaAtras").css("visibility","hidden"),$("#FlechaAdelante").css("visibility","visible"),$("#img6").addClass("latido"),$("#img5").addClass("oculto"),$("#animacion1").hide("slow"),
+
+        numEscena=1;$("body").css("background-image","url(./img/fondo-1.jpg)"),$("#fondo2").hide("slow"),$("#fondo3").hide("slow"),$("#fondo4").hide("slow"),$("#fondo5").hide("slow"),$("#fondo6").hide("slow"),$("#fondo").css("visibility","visible"),$("#fondo").fadeTo(1e3,1),$("#menu").show("slow")})}),$(document).ready(function(){$("#Escena2").click(function(){
+             $("#FlechaAdelante").removeClass("latido"),
+            $("#FlechaAtras").css("visibility","visible"),$("#FlechaAdelante").css("visibility","visible"),
+            $("#img16").addClass("latido"),$("#animacion2").show(),$("#animacion4").show(),$("#animacion3").hide(),$("#img19").hide(),
+            numEscena=2;$("body").css("background-image","url(./img/fondo-1.jpg)"),$("#fondo").hide("slow"),$("#fondo3").hide("slow"),$("#fondo4").hide("slow"),$("#fondo5").hide("slow"),$("#fondo6").hide("slow"),$("#fondo2").css("visibility","visible"),$("#fondo2").fadeTo(1e3,1),$("#menu").show("slow")})}),$(document).ready(function(){$("#Escena3").click(function(){
+                 $("#FlechaAdelante").removeClass("latido"),
+                $("#FlechaAtras").css("visibility","visible"),$("#FlechaAdelante").css("visibility","visible"),
+
+                $("#img20,#img22,#img23,#img24,#img26,#img27").hide("slow"),
+                $("#img21").css("visibility","hidden"),
+                $("#img21").show("slow"),
+                
+                numEscena=3;$("body").css("background-image","url(./img/fondo-3.jpg)"),$("#fondo").hide("slow"),$("#fondo2").hide("slow"),$("#fondo4").hide("slow"),$("#fondo5").hide("slow"),$("#fondo6").hide("slow"),$("#fondo3").css("visibility","visible"),$("#fondo3").fadeTo(1e3,1),$("#menu").show("slow")})}),$(document).ready(function(){$("#Escena4").click(function(){
+                     $("#FlechaAdelante").removeClass("latido"),
+                    $("#FlechaAtras").css("visibility","visible"),$("#FlechaAdelante").css("visibility","visible"),$("#torre").css("visibility","hiden"),
+                    $("#img30").addClass("latido"),$("#unidades").hide()
+
+                    numEscena=4;$("body").css("background-image","url(./img/fondo-3.jpg)"),$("#fondo").hide("slow"),$("#fondo2").hide("slow"),$("#fondo3").hide("slow"),$("#fondo5").hide("slow"),$("#fondo6").hide("slow"),$("#fondo4").css("visibility","visible"),$("#fondo4").fadeTo(1e3,1),$("#menu").show("slow")})})},{}]},{},[1]);</script>
+    <script>
+
+/*cambio pantalla 2*/
+    $(document).ready(function(){
+       
+
+        $('#Escena5').click(function(){
+            numEscena=5;
+             $("#FlechaAdelante").removeClass("latido"),
+            /*Ocultar escenas excepto la 2*/  
+            $("#FlechaAtras").css("visibility","visible"),$("#FlechaAdelante").css("visibility","hidden");
+            $("body").css("background-image","url(./img/fondo-5.jpg)") ; 
+            $("#fondo").hide("slow");
+            $("#fondo2").hide("slow");
+            $("#fondo3").hide("slow");
+            $("#fondo4").hide("slow");
+            $("#fondo6").css("visibility", "visible");
+            $("#fondo6").fadeTo(1000,1); 
+            $("#menu").show("slow");  
+        });
+        $('#comenzar2').click(function(){
+            /*Ocultar escenas excepto la 2*/  
+            $("body").css("background-image","url(./img/fondo-5.jpg)")  
+            $("#fondo").hide("slow");
+            $("#fondo2").hide("slow");
+            $("#fondo3").hide("slow");
+            $("#fondo4").hide("slow");
+            $("#fondo7").hide("slow");
+            $("#fondo6").hide("slow");
+            $("#formulario3").hide("slow");
+            $("#fondo5").css("visibility", "visible");
+            $("#fondo5").fadeTo(1000,1); 
+            $("#menu").show("slow");  
+        });
+
+         $('#yes').click(function(){
+            /*Ocultar escenas excepto la 2*/  
+            $("#formulario3").hide("slow");
+            $("#fondo5").show("slow"); 
+            $("#menu").show("slow");  
+            
+        });
+
+         $('#no').click(function(){
+            /*Ocultar escenas excepto la 2*/  
+            $("#formulario3").hide("slow");
+            $("#fondo5").show("slow"); 
+            $("#menu").show("slow");  
+        });
+    });
+    </script>
+
+    <script>
+        var face0=new Image()
+        face0.src="dado1.png"
+        var face1=new Image()
+        face1.src="dado2.png"
+        var face2=new Image()
+        face2.src="dado3.png"
+        var face3=new Image()
+        face3.src="dado4.png"
+        var face4=new Image()
+        face4.src="dado5.png"
+        var face5=new Image()
+        face5.src="dado6.png"
+    </script>
+
+    <script>
+    var fEscena=0;
+         $(document).ready(function(){
+
+            
+                       
+             $('#img1').click(function(){
+                fEscena++;
+
+                if(fEscena===4){
+                    $('#FlechaAdelante').addClass('latido');  
+                }
+            /*Ocultar escenas excepto la 2*/  
+                $('#img1').removeClass('latido');  
+                $("#img1").css("background-image","url(./img/img11.png)");
+                    $("#img1" ).mouseenter(function(){
+                        $("#img1").css("background-image","url(./img/img7.png)");
+                    })
+                    .mouseleave(function() {
+                        $("#img1").css("background-image","url(./img/img11.png)");
+                    });
+            });
+            
+            $('#img2').click(function(){
+                fEscena++;
+                 if(fEscena===4){
+                    $('#FlechaAdelante').addClass('latido');  
+                }
+            /*Ocultar escenas excepto la 2*/    
+                $('#img2').removeClass('latido');  
+                $("#img2").css("background-image","url(./img/img12.png)");
+
+                $("#img2" ).mouseenter(function(){
+                        $("#img2").css("background-image","url(./img/img8.png)");
+                    })
+                    .mouseleave(function() {
+                        $("#img2").css("background-image","url(./img/img12.png)");
+                    });
+        });
+             $('#img3').click(function(){
+                fEscena++;
+                 if(fEscena===4){
+                    $('#FlechaAdelante').addClass('latido');  
+                }
+            /*Ocultar escenas excepto la 2*/    
+                $('#img3').removeClass('latido');  
+                $("#img3").css("background-image","url(./img/img13.png)");
+
+                $("#img3" ).mouseenter(function(){
+                        $("#img3").css("background-image","url(./img/img9.png)");
+                    })
+                    .mouseleave(function() {
+                        $("#img3").css("background-image","url(./img/img13.png)");
+                    });
+        });
+
+
+       
+     
+
+             $('#img4').click(function(){
+                fEscena++;
+                 if(fEscena===4){
+                    $('#FlechaAdelante').addClass('latido');  
+                }
+            /*Ocultar escenas excepto la 2*/    
+                $('#img4').removeClass('latido');  
+                $("#img4").css("background-image","url(./img/img14.png)");
+
+                $("#img4" ).mouseenter(function(){
+                        $("#img4").css("background-image","url(./img/img10.png)");
+                    })
+                    .mouseleave(function() {
+                        $("#img4").css("background-image","url(./img/img14.png)");
+                    });   
+        });
+    });
+    </script>
+
+    <script>
+        
+             $(document).ready(function(){
+                $('#FlechaAtras').click(function(){
+                     $("#FlechaAdelante").css("visibility","visible");
+                    /*Ocultar escenas excepto la 2*/   
+                      if(numEscena===2){
+                        $("#FlechaAtras").css("visibility","hidden");
+                     }
+
+                     if(numEscena==1){
+                        $("#fondo").hide("slow");    
+                    }
+                    else{
+                        $("#fondo"+numEscena+"").hide("slow");   
+                    }
+                    numEscena--;
+                 
+                     if(numEscena==2 || numEscena==4){
+                        $('body').css('background-image', "url(./img/fondo-"+(numEscena-1)+".jpg)");    
+                    }
+                    else{
+                        $('body').css('background-image', "url(./img/fondo-"+numEscena+".jpg)");    
+                    }   
+                    
+                    if(numEscena<=1){
+                         numEscena=1; 
+                        $("#fondo").show("slow");    
+                        $('body').css('background-image', "url(./img/fondo-"+numEscena+".jpg)");
+                    }
+
+                    $("#fondo"+numEscena+"").css("visibility", "visible");
+                    $("#fondo"+numEscena+"").fadeTo(1000,1); 
+                    $("#menu").show("slow");
+                  
+                });
+                 $('#FlechaAdelante').click(function(){
+
+                    $("#FlechaAdelante").removeClass("latido");
+                    $("#FlechaAtras").css("visibility","visible");
+                    if(numEscena===5){
+                        $("#FlechaAdelante").css("visibility","hidden");
+                    }
+                    /*funcion de las flechas*/
+                    if(numEscena==1){
+                        $("#fondo").hide("slow");    
+                    }
+                    else{
+                        $("#fondo"+numEscena+"").hide("slow");   
+                    }
+                    numEscena++;
+                    if(numEscena==2 || numEscena==4){
+                        $('body').css('background-image', "url(./img/fondo-"+(numEscena-1)+".jpg)");    
+                    }
+                    else{
+                        $('body').css('background-image', "url(./img/fondo-"+numEscena+".jpg)");    
+                    }
+
+                    if(numEscena>=5){
+                         numEscena=5; 
+                        $("#fondo"+numEscena+"").show("slow");    
+                        $('body').css('background-image', "url(./img/fondo-"+numEscena+".jpg)");
+                          
+                    }
+                    $("#fondo"+numEscena+"").css("visibility", "visible");
+                    $("#fondo"+numEscena+"").fadeTo(1000,1); 
+                    $("#menu").show("slow");  
+                });
+            }); 
+
+
+        </script>
+
+</html>
+

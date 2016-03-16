@@ -1,0 +1,392 @@
+.hover1{
+	background-image: url(./img/1.jpg);
+}
+
+#fondo5{
+	display: none;
+	width: 100%;
+	height: 85vh;
+}
+
+.padre5{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 85vh;
+}
+
+.padre5-row1{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 15vh;
+	margin: 1vh 0;
+}
+
+.padre4-row1-caja{
+	width: 10.2%;
+	height: 14vh;
+	margin: 0.5vh 0.5%;
+}
+
+
+#pregunta3{
+	width: 70%;
+    height: 26vh;
+	background-size: 10%;
+	background-image: url(./img/num/0.png); 
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.imagen-juego{
+	background-repeat: no-repeat;
+	background-size: 55%;
+}
+#i1{
+	background-image: url(./img/1.jpg);
+	
+}
+
+#i2{
+	background-image: url(./img/2.jpg);
+	
+}
+#i3{
+	background-image: url(./img/3.jpg);
+	
+}
+#i4{
+	background-image: url(./img/4.jpg);
+	
+}
+#i5{
+	background-image: url(./img/5.jpg);
+	
+}
+#i6{
+	background-image: url(./img/6.jpg);
+	
+}
+#i7{
+	background-image: url(./img/7.jpg);
+	
+}
+#i8{
+	background-image: url(./img/8.jpg);
+	
+}	
+
+#i9{
+	background-image: url(./img/9.jpg);
+	
+}
+
+#i10{
+	background-image: url(./img/10.jpg);
+	
+}
+#i11{
+	background-image: url(./img/11.jpg);
+	
+}
+#i12{
+	background-image: url(./img/12.jpg);
+	
+}
+#i13{
+	background-image: url(./img/13.jpg);
+	
+}
+#i14{
+	background-image: url(./img/14.jpg);
+	
+}
+#i15{
+	background-image: url(./img/15.jpg);	
+}
+#i16{
+	background-image: url(./img/16.jpg);
+}
+
+
+#i17{
+	background-image: url(./img/17.jpg);
+	
+}
+
+#i18{
+	background-image: url(./img/18.jpg);
+	
+}
+#i19{
+	background-image: url(./img/19.jpg);
+	
+}
+#i20{
+	background-image: url(./img/20.jpg);
+	
+}
+#i21{
+	background-image: url(./img/21.jpg);
+	
+}
+#i22{
+	background-image: url(./img/22.jpg);
+	
+}
+#i23{
+	background-image: url(./img/23.jpg);	
+}
+#i24{
+	background-image: url(./img/24.jpg);
+}
+
+
+#i25{
+	background-image: url(./img/25.jpg);
+	
+}
+
+#i26{
+	background-image: url(./img/26.jpg);
+	
+}
+#i27{
+	background-image: url(./img/27.jpg);
+	
+}
+#i28{
+	background-image: url(./img/28.jpg);
+	
+}
+#i29{
+	background-image: url(./img/29.png);
+	
+}
+#i30{
+	background-image: url(./img/30.png);
+	
+}
+#i31{
+	background-image: url(./img/31.png);	
+}
+#i32{
+	background-image: url(./img/32.png);
+}
+
+#i33{
+	background-image: url(./img/33.png);
+	
+}
+
+#i34{
+	background-image: url(./img/34.png);
+	
+}
+#i35{
+	background-image: url(./img/35.png);
+	
+}
+#i36{
+	background-image: url(./img/36.png);
+	
+}
+#i37{
+	background-image: url(./img/37.png);
+	
+}
+#i38{
+	background-image: url(./img/38.png);
+	
+}
+
+#i39-dado{
+	width: 60%;
+}
+
+.padreform-robot-img{
+	background-position: center;
+}
+
+#tex1{
+	width: 70%;
+    height: 26vh;
+	background-size: 80%;
+	background-image: url(./img/tex1.png); 
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#img24{
+	background-size: 70%;
+}
+
+#img27{
+	background-size: 70%;
+}
+
+#img30{
+	background-size: 80%;
+}
+
+#img20{
+	background-size: 90%;
+}
+
+#img23{
+	background-size: 90%;
+}
+
+#img31{
+	    background-size: 100%;
+}
+
+
+
+.padremenu{
+	height: 15vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#FlechaAtras{
+	background-image: url(./img/f1.png);
+	background-size: 50%;
+	background-position: center;
+	visibility: hidden;
+}
+
+#FlechaAdelante{
+	background-image: url(./img/f2.png);
+	background-size: 50%;
+	background-position: center;
+}
+
+#Escena1{
+	background-image: url(./img/41.jpg);
+}
+
+#Escena2{
+	background-image: url(./img/42.jpg);
+}
+
+
+#Escena3{
+	background-image: url(./img/43.jpg);
+}
+
+
+#Escena4{
+	background-image: url(./img/44.jpg);
+}
+
+
+#Escena5{
+	background-image: url(./img/45.jpg);
+}
+
+.padre-menuEscenas-Escena{
+	width: 13%;
+    height: 9vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 7px;
+}
+
+.ruleta{
+	display: flex;
+	justify-content: center;
+	background-image:url(img/ruleta.png);
+	width:45%;
+	height:100vh;
+	background-size:100%;
+	background-repeat: no-repeat;
+
+}
+
+.txtTorre{
+	background-image:url(img/inst.png);
+	margin-top: 20vh;
+	width:45%;
+	height:60vh;
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+
+.ruleta-hor{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 33%;
+	height: 100vh;	
+}
+
+.ruleta-ver{
+	background-size: 100%;
+	background-position-x: 50%;
+    background-position-y: 20%;
+	background-repeat: no-repeat;
+	
+	width: 100%;
+	height: 40vh;
+}
+
+#ruleta-ver-cen{
+	background-image:url(img/lanz.png);
+}
+
+
+
+#ruleta-ver-der{
+	background-image:url(img/f3.png);
+}
+
+#pregunta{
+	background-image:url(img/preguntas/1.png);
+}
+
+#yes{
+	width: 50%;
+    height: 40vh;
+	background-image:url(img/SI.png);
+}
+
+#no{
+	width: 50%;
+    height: 40vh;
+	background-image:url(img/NO.png);
+}
+
+#tirar{
+
+	width: 80%;
+    height: 8vh;
+    background-size: 110%;
+	background-image: url(img/lanzar.png); 
+	background-repeat: no-repeat;
+	border-radius: 7px;
+	background-position: center;
+	box-shadow: 2px 2px 5px #999;
+}
+
+#inicio{
+	width: 70%;
+    height: 26vh;
+	background-size: 10%;
+	background-image: url(./img/inicio.png); 
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#pregunta2{
+	margin-top: 10%;
+	width: 70%;
+    height: 26vh;
+	background-size: 50%;
+	background-image: url(./img/puntaje.png); 
+	background-repeat: no-repeat;
+	background-position: center;
+}
